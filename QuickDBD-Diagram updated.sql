@@ -80,14 +80,8 @@ CREATE TABLE "co_curricular_activities_ccas" (
      )
 );
 
-ALTER TABLE "general_information_of_schools" ADD CONSTRAINT "fk_general_information_of_schools_school_name" FOREIGN KEY("school_name")
-REFERENCES "moe_programmes" ("school_name");
-
 ALTER TABLE "school_distinctive_programs" ADD CONSTRAINT "fk_school_distinctive_programs_school_name" FOREIGN KEY("school_name")
 REFERENCES "co_curricular_activities_ccas" ("school_name");
-
-ALTER TABLE "moe_programmes" ADD CONSTRAINT "fk_moe_programmes_school_name" FOREIGN KEY("school_name")
-REFERENCES "subjects_offered" ("school_name");
 
 ALTER TABLE "subjects_offered" ADD CONSTRAINT "fk_subjects_offered_school_name" FOREIGN KEY("school_name")
 REFERENCES "co_curricular_activities_ccas" ("school_name");
